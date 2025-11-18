@@ -5567,6 +5567,118 @@
         }
       }
     },
+    "/api/v1/integrations/n8n/switch_flow": {
+      "post": {
+        "tags": [
+          "Integrations",
+          "N8n"
+        ],
+        "operationId": "switchActiveN8nFlow",
+        "summary": "Switch active n8n flow (authenticated context)",
+        "description": "Same behavior as public endpoint but intended for authenticated API v1 usage.",
+        "security": [
+          {
+            "userAccessToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "conversation_id",
+                  "flow_id"
+                ],
+                "properties": {
+                  "conversation_id": {
+                    "type": "integer"
+                  },
+                  "flow_id": {
+                    "type": "string"
+                  },
+                  "flow_webhook_url": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "basic": {
+                  "value": {
+                    "conversation_id": 321,
+                    "flow_id": "exec_abc"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Flow switched",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "conversation_id": {
+                      "type": "integer"
+                    },
+                    "flow_id": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "success": {
+                    "value": {
+                      "message": "Flow switched",
+                      "conversation_id": 321,
+                      "flow_id": "exec_abc"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/bad_request_error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/bad_request_error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/bad_request_error"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "data"
+      }
+    },
     "/api/v1/accounts/{account_id}/teams": {
       "get": {
         "tags": [

@@ -1,5 +1,5 @@
 {
-  "name": "@devlikeapro/n8n-nodes-chatwoot",
+  "name": "@alex12345648/n8n-nodes-chatwoot",
   "version": "1.0.2",
   "description": "n8n node to connect with ChatWoot",
   "keywords": [
@@ -8,12 +8,12 @@
   "license": "MIT",
   "homepage": "",
   "author": {
-    "name": "Devlikapro",
-    "email": "admin@devlike.pro"
+    "name": "alex12345648",
+    "email": "llazayanaalex@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/devlikeapro/n8n-nodes-chatwoot.git"
+    "url": "https://github.com/Alex123465489/n8n-nodes-chatwoot"
   },
   "engines": {
     "node": ">=18.10",
@@ -38,25 +38,28 @@
       "dist/credentials/ChatWootApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/ChatWoot/ChatWoot.node.js"
+      "dist/nodes/ChatWoot/ChatWoot.node.js",
+      "dist/nodes/ChatWoot/ChatWootAttachment.node.js"
     ]
   },
   "devDependencies": {
+    "@types/form-data": "^2.5.2",
     "@types/jest": "^29.5.12",
     "@typescript-eslint/parser": "^7.15.0",
     "eslint": "^8.56.0",
     "eslint-plugin-n8n-nodes-base": "^1.16.1",
     "gulp": "^4.0.2",
+    "jest": "^29.7.0",
     "n8n-workflow": "*",
     "prettier": "^3.3.2",
-    "typescript": "^5.5.3",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.2.5"
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.5.3"
   },
   "peerDependencies": {
     "n8n-workflow": "*"
   },
   "dependencies": {
-    "@devlikeapro/n8n-openapi-node": "^0.1.0"
+    "@devlikeapro/n8n-openapi-node": "^0.1.0",
+    "form-data": "^4.0.5"
   }
 }

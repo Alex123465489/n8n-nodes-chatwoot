@@ -49,6 +49,10 @@ Install [the community node package in your n8n instance](https://docs.n8n.io/in
 2. Add **ChatWoot API** **credentials** in **n8n**.
 3. Create a new workflow with the **ChatWoot** node.
 
+### Attachments from URL
+- Use the **ChatWoot Attachment** node to download a public file URL and post it to a ChatWoot conversation in a single step.
+- Within the default **ChatWoot** node you now have an action to switch the active n8n flow for a conversation (`Integrations → Switch Active n8n Flow`).
+
 ## Credentials
 There are few types of credentials (accounts) that you can use to authenticate with ChatWoot API.
 
